@@ -1,6 +1,20 @@
-import React from 'react';
+import React from 'react'
+import ReactDOM from 'react-dom'
 import '@babel/polyfill'
-import ReactDOM from 'react-dom';
-import App from "./app";
+import App from './App'
+import DefaultErrorBoundary from './DefaultErrorBoundary'
+import './style/style.scss'
 
-ReactDOM.render(<App/>, document.getElementById('app'));
+if (process.env.NODE_ENV === 'development') {
+  const axe = require('react-axe')
+  axe(React, ReactDOM, 1000)
+}
+
+ReactDOM.render(
+  <React.StrictMode>
+    <DefaultErrorBoundary>
+      <App />
+    </DefaultErrorBoundary>
+  </React.StrictMode>,
+  document.getElementById('app')
+)
