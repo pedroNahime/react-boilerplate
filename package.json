@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack --config webpack.config.prod.js",
-    "dev": "webpack-dev-server --open --config webpack.config.dev.js",
-    "dev:hot": "npm run dev -- --hot",
+    "dev": "webpack-dev-server --config webpack.config.dev.js --color",
     "test": "jest",
     "format": "pretty-quick",
     "lint": "eslint ./"
@@ -60,7 +59,6 @@
     "webpack-merge": "^4.2.2"
   },
   "dependencies": {
-    "core-js": "3",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
